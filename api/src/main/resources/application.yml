@@ -1,0 +1,8 @@
+spring:
+  thymeleaf:
+    cache: false
+    enable-spring-el-compiler: true
+
+server:
+  servlet:
+    context-path: /
