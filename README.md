@@ -1,24 +1,25 @@
-# Getting Started
+# REDSCARF项目介绍
 
-### Reference Documentation
+### 简介
+> 围绕springcloud相关技术设计的项目，目的是把所学技术统一，具体会涉及订单支付，移动论坛/博客，游戏资讯，后台以及日志。
 
-For further reference, please consider the following sections:
+### 技术概况
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.3/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.3/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.3/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Data Redis (Access+Driver)](https://docs.spring.io/spring-boot/docs/2.4.3/reference/htmlsingle/#boot-features-redis)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.4.3/reference/htmlsingle/#boot-features-spring-mvc-template-engines)
+基础框架spring系列:
 
-### Guides
+| springboot版本 | springcloud版本 | springcloudAlibaba版本 |
+| ------------- | -------------- | ---------------- |
+| 2.3.2.RELEASE | Hoxton.SR8 | 2.2.5.RELEASE |
 
-The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-* [Messaging with Redis](https://spring.io/guides/gs/messaging-redis/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-
+### 项目结构
+```
+redscarf
+ -redscrf-common
+ -redscarf-gateway
+ -redscarf-user-service
+  -nacos-user-service
+  -user-common
+  -user-dao
+  -user-rpc
+```
