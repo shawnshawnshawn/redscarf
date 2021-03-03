@@ -12,6 +12,8 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
 
     FAIL(1, "请求失败"),
 
+    SERVER_UNUSERFUL(-1, "服务不可用"),
+
     SERVER_ERROR(500, "服务器异常"),
 
     PARAM_NULL(100, "参数不能为空"),

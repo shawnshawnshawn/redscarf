@@ -95,4 +95,15 @@ public class Result<T> {
         result.setData(data);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"success\":" + success +
+                ", \"code\":" + code +
+                ", \"message\":\"" + message + '\"' +
+                ", \"data\":" + data +
+                ", \"t\":" + t +
+                '}';
+    }
 }

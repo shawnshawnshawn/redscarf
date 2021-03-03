@@ -15,11 +15,16 @@
 ### 项目结构
 ```
 redscarf
- -redscrf-common
- -redscarf-gateway
- -redscarf-user-service
-  -nacos-user-service
-  -user-common
-  -user-dao
-  -user-rpc
+ |-redscrf-common
+ |-redscarf-gateway
+ |-redscarf-user-service
+ |--nacos-user-service
+ |--user-common
+ |--user-dao
+ |--user-rpc
+ ...
 ```
+### 必要服务
+* nacos提供配置中心和服务发现，需要搭建nacos服务，可参考官方文档[nacos快速开始](https://nacos.io/zh-cn/docs/quick-start.html)
+* mysql数据存储服务
+* redis缓存服务

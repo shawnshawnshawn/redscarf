@@ -1,11 +1,10 @@
 package com.baiye.redscarf.gateway.controller;
 
-import com.baiye.redscarf.common.result.Result;
+import com.baiye.redscarf.gateway.service.UserFeignService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
@@ -18,11 +17,10 @@ import javax.annotation.Resource;
 public class UserAccountController {
 
     @Resource
-    private RestTemplate restTemplate;
+    private UserFeignService userFeignService;
 
     @RequestMapping(value = "/getUserAccountInfo/{id}", method = RequestMethod.GET)
-    public String getUserAccountInfo(@PathVariable Long id) {
-        String forObject = restTemplate.getForObject("http://localhost:8082/user/getUserAccount/"+id, String.class);
-        return forObject;
+    public String getUserAccountInfo(@PathVariable("id") Long id) {
+        return userFeignService.getUserAccountInfo(id);
     }
 }

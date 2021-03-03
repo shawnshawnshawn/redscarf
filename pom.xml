@@ -8,9 +8,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>redscarf-gateway</module>
         <module>redscarf-user-service</module>
         <module>redscarf-common</module>
+        <module>redscarf-gateway</module>
     </modules>
 
 </project>
