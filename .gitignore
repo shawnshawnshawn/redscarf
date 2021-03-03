@@ -34,3 +34,9 @@ build/
 ### user defined###
 test
 */*.iml
+
+### user defined ###
+build-code.jar
+buildCode.sh
+mybatisConfig.xml
+mysql.jar
