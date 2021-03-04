@@ -11,6 +11,7 @@
         <module>redscarf-user-service</module>
         <module>redscarf-common</module>
         <module>redscarf-gateway</module>
+        <module>redscarf-siege</module>
     </modules>
 
 </project>
