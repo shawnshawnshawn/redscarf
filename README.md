@@ -29,7 +29,7 @@
 * RocketMQ 消息分发
 * ELK 大数据搜索
 * OSS 阿里云静态文件存储
-* Elastic-job 分布式定时任务
+* Elastic-job 分布式调度任务
 * WeChatPay 微信支付
 * ...
 
@@ -53,3 +53,6 @@ redscarf
 * elk搜索服务
 
 ### 功能描述
+1. [redscarf-common](/redscarf-common)项目基础工具包包含返回信息视图，公共工具包，公共枚举以及业务异常。
+2. [redscarf-gateway](/redscarf-gateway)项目网关
+3. [redscarf-user-service](/redscarf-user-service)用户相关会员服务
