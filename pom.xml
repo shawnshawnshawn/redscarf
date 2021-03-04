@@ -12,6 +12,7 @@
         <module>redscarf-common</module>
         <module>redscarf-gateway</module>
         <module>redscarf-siege</module>
+        <module>redscarf-cache</module>
     </modules>
 
 </project>

@@ -125,4 +125,11 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <select id="selectByPhoneNoAndPassword" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_user_account_info
+    where phone_no = #{phoneNo} and `password` = #{password}
+  </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.baiye.redscarf.user.service.impl;
 
+import com.baiye.redscarf.common.enums.ResultCodeEnum;
+import com.baiye.redscarf.common.result.Result;
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
 import com.baiye.redscarf.user.dao.mapper.UserAccountMapper;
 import com.baiye.redscarf.user.service.UserAccountService;
@@ -21,7 +23,16 @@ public class UserAccountServiceImpl implements UserAccountService {
     public UserAccountEntity getUserAccountById(Long userAccountId) {
         UserAccountEntity uae = userAccountMapper.selectByPrimaryKey(userAccountId);
         if (uae == null) {
-            throw new RuntimeException("用户账户不存在");
+            throw Result.toBizException(ResultCodeEnum.USER_NOT_EXIST);
+        }
+        return uae;
+    }
+
+    @Override
+    public UserAccountEntity getUserAccountByPhoneNoAndPassword(String phoneNo, String encoderByMd5) {
+        UserAccountEntity uae = userAccountMapper.selectByPhoneNoAndPassword(phoneNo, encoderByMd5);
+        if (uae == null ) {
+            throw Result.toBizException(ResultCodeEnum.LOGIN_NO_OR_PWD_ERROR);
         }
         return uae;
     }

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baiye.redscarf.user.dao.mapper.UserSiegeMapper" >
+  <resultMap id="BaseResultMap" type="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="siege_id" property="siegeId" jdbcType="BIGINT" />
+    <result column="is_up" property="isUp" jdbcType="BIT" />
+    <result column="up_time" property="upTime" jdbcType="TIMESTAMP" />
+    <result column="is_collect" property="isCollect" jdbcType="BIT" />
+    <result column="collect_time" property="collectTime" jdbcType="TIMESTAMP" />
+    <result column="is_forward" property="isForward" jdbcType="BIT" />
+    <result column="forward_time" property="forwardTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, siege_id, is_up, up_time, is_collect, collect_time, is_forward, forward_time, 
+    update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_user_siege
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tbl_user_siege
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+    insert into tbl_user_siege (id, user_id, siege_id, 
+      is_up, up_time, is_collect, 
+      collect_time, is_forward, forward_time, 
+      update_time, create_time)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{siegeId,jdbcType=BIGINT}, 
+      #{isUp,jdbcType=BIT}, #{upTime,jdbcType=TIMESTAMP}, #{isCollect,jdbcType=BIT}, 
+      #{collectTime,jdbcType=TIMESTAMP}, #{isForward,jdbcType=BIT}, #{forwardTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+    insert into tbl_user_siege
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="siegeId != null" >
+        siege_id,
+      </if>
+      <if test="isUp != null" >
+        is_up,
+      </if>
+      <if test="upTime != null" >
+        up_time,
+      </if>
+      <if test="isCollect != null" >
+        is_collect,
+      </if>
+      <if test="collectTime != null" >
+        collect_time,
+      </if>
+      <if test="isForward != null" >
+        is_forward,
+      </if>
+      <if test="forwardTime != null" >
+        forward_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="siegeId != null" >
+        #{siegeId,jdbcType=BIGINT},
+      </if>
+      <if test="isUp != null" >
+        #{isUp,jdbcType=BIT},
+      </if>
+      <if test="upTime != null" >
+        #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCollect != null" >
+        #{isCollect,jdbcType=BIT},
+      </if>
+      <if test="collectTime != null" >
+        #{collectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isForward != null" >
+        #{isForward,jdbcType=BIT},
+      </if>
+      <if test="forwardTime != null" >
+        #{forwardTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+    update tbl_user_siege
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="siegeId != null" >
+        siege_id = #{siegeId,jdbcType=BIGINT},
+      </if>
+      <if test="isUp != null" >
+        is_up = #{isUp,jdbcType=BIT},
+      </if>
+      <if test="upTime != null" >
+        up_time = #{upTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isCollect != null" >
+        is_collect = #{isCollect,jdbcType=BIT},
+      </if>
+      <if test="collectTime != null" >
+        collect_time = #{collectTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isForward != null" >
+        is_forward = #{isForward,jdbcType=BIT},
+      </if>
+      <if test="forwardTime != null" >
+        forward_time = #{forwardTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+    update tbl_user_siege
+    set user_id = #{userId,jdbcType=BIGINT},
+      siege_id = #{siegeId,jdbcType=BIGINT},
+      is_up = #{isUp,jdbcType=BIT},
+      up_time = #{upTime,jdbcType=TIMESTAMP},
+      is_collect = #{isCollect,jdbcType=BIT},
+      collect_time = #{collectTime,jdbcType=TIMESTAMP},
+      is_forward = #{isForward,jdbcType=BIT},
+      forward_time = #{forwardTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

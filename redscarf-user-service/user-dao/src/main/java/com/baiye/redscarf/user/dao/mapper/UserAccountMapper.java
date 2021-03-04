@@ -1,6 +1,7 @@
 package com.baiye.redscarf.user.dao.mapper;
 
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserAccountMapper {
     int deleteByPrimaryKey(Long id);
@@ -14,4 +15,7 @@ public interface UserAccountMapper {
     int updateByPrimaryKeySelective(UserAccountEntity record);
 
     int updateByPrimaryKey(UserAccountEntity record);
+
+    UserAccountEntity selectByPhoneNoAndPassword(@Param("phoneNo") String phoneNo, @Param("password") String encoderByMd5);
+
 }

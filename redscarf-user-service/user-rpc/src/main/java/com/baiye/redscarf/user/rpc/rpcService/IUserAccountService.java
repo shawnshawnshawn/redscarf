@@ -1,4 +1,4 @@
-package com.baiye.redscarf.user.rpc.remote;
+package com.baiye.redscarf.user.rpc.rpcService;
 
 import com.baiye.redscarf.user.common.dto.UserAccountDTO;
 

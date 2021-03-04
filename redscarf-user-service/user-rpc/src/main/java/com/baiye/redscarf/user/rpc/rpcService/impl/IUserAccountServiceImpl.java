@@ -1,9 +1,9 @@
-package com.baiye.redscarf.user.rpc.remote.impl;
+package com.baiye.redscarf.user.rpc.rpcService.impl;
 
 import com.baiye.redscarf.user.common.dto.UserAccountDTO;
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
 import com.baiye.redscarf.user.service.UserAccountService;
-import com.baiye.redscarf.user.rpc.remote.IUserAccountService;
+import com.baiye.redscarf.user.rpc.rpcService.IUserAccountService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

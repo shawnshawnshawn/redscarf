@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.baiye.redscarf.cache.config.RedisConfig,\
+  com.baiye.redscarf.cache.redis.impl.CacheServiceImpl

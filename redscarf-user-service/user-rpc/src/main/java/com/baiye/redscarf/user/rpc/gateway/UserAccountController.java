@@ -2,7 +2,7 @@ package com.baiye.redscarf.user.rpc.gateway;
 
 import com.baiye.redscarf.common.result.Result;
 import com.baiye.redscarf.user.common.dto.UserAccountDTO;
-import com.baiye.redscarf.user.rpc.remote.IUserAccountService;
+import com.baiye.redscarf.user.rpc.rpcService.IUserAccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,4 +30,5 @@ public class UserAccountController {
         log.info("ip -> {}, param -> {}", "", id);
         return Result.toResult(iUserAccountService.getUserAccountById(id));
     }
+
 }

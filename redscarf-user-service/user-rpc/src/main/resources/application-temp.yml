@@ -11,6 +11,19 @@ spring:
       discovery:
         enabled: true
         server-addr: http://47.110.149.15:8848
+    sentinel:
+      transport:
+        dashboard: 47.110.149.15:8080
+      datasource:
+        ns:
+          nacos:
+            serverAddr: 47.110.149.15:8848
+            username: nacos
+            password: nacos
+            groupId: SENTINEL_GROUP
+            dataId: ${spring.application.name}-flow-rules
+            namespace: 016a7c5e-df72-45b2-925d-2a5046d5c0d1
+            ruleType: flow
   datasource:
     druid:
       url: jdbc:mysql://localhost:3306/redscarf?serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&useUnicode=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&characterEncoding=UTF-8&useSSL=false
@@ -51,10 +64,16 @@ spring:
           slow-sql-millis: 5000
           log-slow-sql: true
           enabled: true
+  redis:
+    host: 39.102.73.172
+    password: Qipinredis1!
+    port: 6376
+    database: 3
 
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.baiye.redscarf.user.dao.entity
-uname:
-  a: whitealso
-  b: sino
+
+feign:
+  sentinel:
+    enabled: true

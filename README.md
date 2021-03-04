@@ -59,7 +59,9 @@ redscarf
 1. [redscarf-common](/redscarf-common)项目基础工具包包含返回信息视图，公共工具包，公共枚举以及业务异常。
 2. [redscarf-gateway](/redscarf-gateway)项目网关
 3. [redscarf-user-service](/redscarf-user-service)用户相关会员服务
-4. ...
+4. [redscarf-cache](/redscarf-cache)项目缓存服务   
+5. [redscarf-siege](/redscarf-siege)围城(帖子)业务服务   
+6. ...
 
 #### 说明
 * 关于sentinel的规则持久化，目前使用nacos存储，修改规则也通过nacos配置文件修改，未使用sentinel-dashboard做动态修改。

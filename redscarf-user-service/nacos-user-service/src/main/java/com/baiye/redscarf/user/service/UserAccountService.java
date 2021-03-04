@@ -9,4 +9,6 @@ import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
 public interface UserAccountService {
 
     UserAccountEntity getUserAccountById(Long userAccountId);
+
+    UserAccountEntity getUserAccountByPhoneNoAndPassword(String phoneNo, String encoderByMd5);
 }
