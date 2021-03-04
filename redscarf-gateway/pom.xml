@@ -16,7 +16,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <sentinel.version>1.8.1</sentinel.version>
     </properties>
 
     <dependencyManagement>
@@ -68,19 +69,15 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-       <!-- spring-cloud-alibaba-dependencies依赖中默认使用的是1.8.0，
-       不能正确的使用openfeign -->
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-annotation-aspectj</artifactId>
-            <version>1.8.1</version>
-            <scope>compile</scope>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <version>1.8.1</version>
-            <scope>compile</scope>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+            <version>${sentinel.version}</version>
         </dependency>
     </dependencies>
 

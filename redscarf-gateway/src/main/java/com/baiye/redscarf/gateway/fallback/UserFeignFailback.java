@@ -1,7 +1,8 @@
-package com.baiye.redscarf.gateway.service;
+package com.baiye.redscarf.gateway.fallback;
 
 import com.baiye.redscarf.common.enums.ResultCodeEnum;
 import com.baiye.redscarf.common.result.Result;
+import com.baiye.redscarf.gateway.service.UserFeignService;
 import org.springframework.stereotype.Component;
 
 /**

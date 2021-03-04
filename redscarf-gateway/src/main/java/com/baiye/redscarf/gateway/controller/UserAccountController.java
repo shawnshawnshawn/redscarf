@@ -1,5 +1,6 @@
 package com.baiye.redscarf.gateway.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.baiye.redscarf.gateway.service.UserFeignService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +15,12 @@ import javax.annotation.Resource;
  **/
 @RestController
 @RequestMapping("/user")
-public class UserAccountController {
+public class UserAccountController extends BaseController{
 
     @Resource
     private UserFeignService userFeignService;
 
+    @SentinelResource(value = "getUserAccountInfo", blockHandler = "blockHandler")
     @RequestMapping(value = "/getUserAccountInfo/{id}", method = RequestMethod.GET)
     public String getUserAccountInfo(@PathVariable("id") Long id) {
         return userFeignService.getUserAccountInfo(id);
