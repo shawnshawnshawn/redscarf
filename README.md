@@ -16,15 +16,18 @@
 * Nacos 实现配置中心
 * Sentinel  实现服务容错
 * Seata 实现分布式事务
+
 #### Spring Cloud
 * Ribbon 实现负载均衡
 * OpenFeign 实现远程调用
 * Gateway API网关
 * Sleuth 实现调用链监控
+
 #### Spring Boot
 * Mysql 数据持久化
 * Redis 热点数据缓存
 * Mybatis 持久层框架 
+
 #### Others
 * RocketMQ 消息分发
 * ELK 大数据搜索
@@ -56,3 +59,8 @@ redscarf
 1. [redscarf-common](/redscarf-common)项目基础工具包包含返回信息视图，公共工具包，公共枚举以及业务异常。
 2. [redscarf-gateway](/redscarf-gateway)项目网关
 3. [redscarf-user-service](/redscarf-user-service)用户相关会员服务
+4. ...
+
+#### 说明
+* 关于sentinel的规则持久化，目前使用nacos存储，修改规则也通过nacos配置文件修改，未使用sentinel-dashboard做动态修改。
+
