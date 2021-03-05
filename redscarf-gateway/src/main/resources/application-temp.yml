@@ -25,11 +25,22 @@ spring:
             ruleType: flow
     gateway:
       routes:
-        - id: redscarf-user-service-dev
+        - id: redscarf-user-service-dev_1
           uri: http://localhost:8081
           predicates:
-            - Path=/user/{param1}/{param2}
-      enabled: false
+            - Path=/user-server/{param0}/{param1}/{param2}
+        - id: redscarf-user-service-dev_2
+          uri: http://localhost:8081
+          predicates:
+            - Path=/user-server/{param0}/{param1}
+        - id: redscarf-siege-service-dev_1
+          uri: http://localhost:8082
+          predicates:
+            - Path=/siege-server/{param0}/{param1}/{param2}
+        - id: redscarf-siege-service-dev_2
+          uri: http://localhost:8082
+          predicates:
+            - Path=/siege-server/{param0}/{param1}
   #service-url:
   #nacos-user-service: http://redscarf-user-service-dev
 feign:
