@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baiye.redscarf.siege.dao.mapper.SiegePostsMapper" >
+  <resultMap id="BaseResultMap" type="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="siege_title" property="siegeTitle" jdbcType="VARCHAR" />
+    <result column="siege_type" property="siegeType" jdbcType="BIT" />
+    <result column="siege_images" property="siegeImages" jdbcType="VARCHAR" />
+    <result column="siege_info" property="siegeInfo" jdbcType="VARCHAR" />
+    <result column="siege_status" property="siegeStatus" jdbcType="BIT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, siege_title, siege_type, siege_images, siege_info, siege_status, update_time, 
+    create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_siege_posts
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tbl_siege_posts
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+    insert into tbl_siege_posts (id, user_id, siege_title, 
+      siege_type, siege_images, siege_info, 
+      siege_status, update_time, create_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{siegeTitle,jdbcType=VARCHAR}, 
+      #{siegeType,jdbcType=BIT}, #{siegeImages,jdbcType=VARCHAR}, #{siegeInfo,jdbcType=VARCHAR}, 
+      #{siegeStatus,jdbcType=BIT}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+    insert into tbl_siege_posts
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="siegeTitle != null" >
+        siege_title,
+      </if>
+      <if test="siegeType != null" >
+        siege_type,
+      </if>
+      <if test="siegeImages != null" >
+        siege_images,
+      </if>
+      <if test="siegeInfo != null" >
+        siege_info,
+      </if>
+      <if test="siegeStatus != null" >
+        siege_status,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="siegeTitle != null" >
+        #{siegeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeType != null" >
+        #{siegeType,jdbcType=BIT},
+      </if>
+      <if test="siegeImages != null" >
+        #{siegeImages,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeInfo != null" >
+        #{siegeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeStatus != null" >
+        #{siegeStatus,jdbcType=BIT},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+    update tbl_siege_posts
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="siegeTitle != null" >
+        siege_title = #{siegeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeType != null" >
+        siege_type = #{siegeType,jdbcType=BIT},
+      </if>
+      <if test="siegeImages != null" >
+        siege_images = #{siegeImages,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeInfo != null" >
+        siege_info = #{siegeInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="siegeStatus != null" >
+        siege_status = #{siegeStatus,jdbcType=BIT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+    update tbl_siege_posts
+    set user_id = #{userId,jdbcType=BIGINT},
+      siege_title = #{siegeTitle,jdbcType=VARCHAR},
+      siege_type = #{siegeType,jdbcType=BIT},
+      siege_images = #{siegeImages,jdbcType=VARCHAR},
+      siege_info = #{siegeInfo,jdbcType=VARCHAR},
+      siege_status = #{siegeStatus,jdbcType=BIT},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+<!-- user-defined -->
+  <select id="pageQuerySiegeByConditions" resultMap="BaseResultMap" parameterType="com.baiye.redscarf.siege.common.obj.PageQuerySiegeConditions">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_siege_posts
+    where siege_type = #{siegeType}
+    <if test="searchKey != null and '' != searchKey">
+      and siege_title like concat('%', #{searchKey}, '%')
+    </if>
+    order by create_time desc
+    limit #{startPage}, #{pageSize}
+  </select>
+
+  <select id="countSiegeByConditions" resultType="java.lang.Integer" parameterType="com.baiye.redscarf.siege.common.obj.PageQuerySiegeConditions">
+    select
+    count(*)
+    from tbl_siege_posts
+    where siege_type = #{siegeType}
+    <if test="searchKey != null and '' != searchKey">
+      and siege_title like concat('%', #{searchKey}, '%')
+    </if>
+  </select>
+
+</mapper>

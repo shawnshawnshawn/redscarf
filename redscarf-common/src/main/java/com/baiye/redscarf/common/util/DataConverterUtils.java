@@ -1,5 +1,7 @@
 package com.baiye.redscarf.common.util;
 
+import com.alibaba.fastjson.JSONObject;
+import com.baiye.redscarf.common.result.Result;
 import com.google.common.collect.Lists;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
@@ -34,5 +36,18 @@ public class DataConverterUtils {
             targetList.add(t);
         });
         return targetList;
+    }
+
+    public static <E> Result<E> convertResultObject(String source, Class<E> eClass) {
+        Result result = JsonUtils.toObj2(source, Result.class);
+        Result<E> res = Result.ofFail();
+        if (source == null || result == null) {
+            return res;
+        }
+        BeanUtils.copyProperties(result, res);
+        JSONObject jsonObject = JSONObject.parseObject(source);
+        E data = jsonObject.getObject("data", eClass);
+        res.setData(data);
+        return res;
     }
 }

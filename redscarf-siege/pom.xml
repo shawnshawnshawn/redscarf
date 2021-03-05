@@ -13,7 +13,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>siege-service</module>
-        <module>seige-rpc</module>
+        <module>siege-rpc</module>
+        <module>siege-dao</module>
+        <module>siege-common</module>
     </modules>
 
     <properties>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baiye.redscarf.siege.dao.mapper.SiegeDataMapper" >
+  <resultMap id="BaseResultMap" type="com.baiye.redscarf.siege.dao.entity.SiegeDataEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="siege_id" property="siegeId" jdbcType="BIGINT" />
+    <result column="up_num" property="upNum" jdbcType="INTEGER" />
+    <result column="down_num" property="downNum" jdbcType="INTEGER" />
+    <result column="collect_num" property="collectNum" jdbcType="INTEGER" />
+    <result column="forward_num" property="forwardNum" jdbcType="INTEGER" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, siege_id, up_num, down_num, collect_num, forward_num, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_siege_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tbl_siege_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.baiye.redscarf.siege.dao.entity.SiegeDataEntity" >
+    insert into tbl_siege_data (id, siege_id, up_num, 
+      down_num, collect_num, forward_num, 
+      update_time, create_time)
+    values (#{id,jdbcType=BIGINT}, #{siegeId,jdbcType=BIGINT}, #{upNum,jdbcType=INTEGER}, 
+      #{downNum,jdbcType=INTEGER}, #{collectNum,jdbcType=INTEGER}, #{forwardNum,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegeDataEntity" >
+    insert into tbl_siege_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="siegeId != null" >
+        siege_id,
+      </if>
+      <if test="upNum != null" >
+        up_num,
+      </if>
+      <if test="downNum != null" >
+        down_num,
+      </if>
+      <if test="collectNum != null" >
+        collect_num,
+      </if>
+      <if test="forwardNum != null" >
+        forward_num,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="siegeId != null" >
+        #{siegeId,jdbcType=BIGINT},
+      </if>
+      <if test="upNum != null" >
+        #{upNum,jdbcType=INTEGER},
+      </if>
+      <if test="downNum != null" >
+        #{downNum,jdbcType=INTEGER},
+      </if>
+      <if test="collectNum != null" >
+        #{collectNum,jdbcType=INTEGER},
+      </if>
+      <if test="forwardNum != null" >
+        #{forwardNum,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegeDataEntity" >
+    update tbl_siege_data
+    <set >
+      <if test="siegeId != null" >
+        siege_id = #{siegeId,jdbcType=BIGINT},
+      </if>
+      <if test="upNum != null" >
+        up_num = #{upNum,jdbcType=INTEGER},
+      </if>
+      <if test="downNum != null" >
+        down_num = #{downNum,jdbcType=INTEGER},
+      </if>
+      <if test="collectNum != null" >
+        collect_num = #{collectNum,jdbcType=INTEGER},
+      </if>
+      <if test="forwardNum != null" >
+        forward_num = #{forwardNum,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.siege.dao.entity.SiegeDataEntity" >
+    update tbl_siege_data
+    set siege_id = #{siegeId,jdbcType=BIGINT},
+      up_num = #{upNum,jdbcType=INTEGER},
+      down_num = #{downNum,jdbcType=INTEGER},
+      collect_num = #{collectNum,jdbcType=INTEGER},
+      forward_num = #{forwardNum,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectBySiegeId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_siege_data
+    where siege_id = #{siegeId}
+  </select>
+</mapper>
