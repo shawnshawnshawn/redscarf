@@ -22,9 +22,6 @@ public class SiegeDataServiceImpl implements SiegeDataService {
     @Override
     public SiegeDataEntity getSiegeDataById(Long id) {
         SiegeDataEntity siegeDataEntity = siegeDataMapper.selectBySiegeId(id);
-        if (siegeDataEntity == null) {
-            throw Result.toBizException(ResultCodeEnum.SIEGE_NOT_EXIST);
-        }
         return siegeDataEntity;
     }
 }

@@ -59,7 +59,9 @@ public class ISiegeServiceImpl implements ISiegeService {
                 vo.setSiegeTitle(dto.getSiegeTitle());
                 vo.setImages(dto.getSiegeImages());
                 SiegeDataEntity siegeDataEntity = siegeDataService.getSiegeDataById(dto.getId());
-                vo.setUpNum(siegeDataEntity.getUpNum());
+                if (siegeDataEntity != null) {
+                    vo.setUpNum(siegeDataEntity.getUpNum());
+                }
                 vos.add(vo);
             }
             siegeListVoPageVo.setDtos(vos);

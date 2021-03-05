@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date 2021/3/4 5:14 下午
  **/
 @FeignClient(value = "redscarf-user-service-dev", fallback = UserFeignFallback.class)
+@RequestMapping("/user-server/user")
 public interface UserFeignService {
 
-    @RequestMapping(value = "/user-server/user/getUserAccount/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/getUserAccount/{id}", method = RequestMethod.GET)
     String getUserAccountInfo(@PathVariable("id") Long id);
 }

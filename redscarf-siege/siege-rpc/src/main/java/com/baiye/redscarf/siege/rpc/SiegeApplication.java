@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author baiye
  * @date 2021/3/4 5:08 下午
  **/
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.baiye.redscarf.siege.service.reference.feign")
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = "com.baiye.redscarf.siege")
 @MapperScan(basePackages = "com.baiye.redscarf.siege.dao.mapper")
