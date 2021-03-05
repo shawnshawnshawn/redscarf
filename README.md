@@ -74,3 +74,4 @@ redscarf
 #### 说明
 * 关于sentinel的规则持久化，目前使用nacos存储，修改规则也通过nacos配置文件修改，未使用sentinel-dashboard做动态修改。
 * mysql数据同步到elasticsearch使用的是alibaba canal组件，后面我会把具体文档同步过来。
+* canal安装配置[文档](/canal-es.md)
