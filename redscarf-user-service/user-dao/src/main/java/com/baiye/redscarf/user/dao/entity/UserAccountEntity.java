@@ -18,6 +18,10 @@ public class UserAccountEntity {
      */
     private String phoneNo;
 
+    private String avatarUrl;
+
+    private Integer accountStatus;
+
     /**
      * 登录密码
      */
