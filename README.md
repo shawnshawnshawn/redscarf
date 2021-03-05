@@ -30,10 +30,11 @@
 
 #### Others
 * RocketMQ 消息分发
-* ELK 大数据搜索
+* Elasticsearch 大数据搜索
 * OSS 阿里云静态文件存储
 * Elastic-job 分布式调度任务
 * WeChatPay 微信支付
+* Canal 数据同步  
 * ...
 
 
@@ -47,13 +48,20 @@ redscarf
  |--user-common
  |--user-dao
  |--user-rpc
+ |-redscarf-siege
+ |--siege-common
+ |--siege-dao
+ |--siege-rpc
+ |--siege-service
+ |-redscarf-cache
  ...
 ```
 ### 必要服务
 * nacos提供配置中心和服务发现，需要搭建nacos服务，可参考官方文档[nacos快速开始](https://nacos.io/zh-cn/docs/quick-start.html)
 * mysql数据存储服务
 * redis缓存服务
-* elk搜索服务
+* elasticsearch搜索服务
+* canal数据同步服务
 
 ### 功能描述
 1. [redscarf-common](/redscarf-common)项目基础工具包包含返回信息视图，公共工具包，公共枚举以及业务异常。
@@ -65,4 +73,4 @@ redscarf
 
 #### 说明
 * 关于sentinel的规则持久化，目前使用nacos存储，修改规则也通过nacos配置文件修改，未使用sentinel-dashboard做动态修改。
-
+* mysql数据同步到elasticsearch使用的是alibaba canal组件，后面我会把具体文档同步过来。
