@@ -1,14 +1,15 @@
-package com.baiye.redscarf.user.rpc.rpcService.impl;
+package com.baiye.redscarf.user.service.rpcService.impl;
 
 import com.baiye.redscarf.cache.redis.CacheService;
+import com.baiye.redscarf.common.param.BaseForm;
 import com.baiye.redscarf.common.util.MD5Utils;
 import com.baiye.redscarf.common.util.RandomKeyUtils;
 import com.baiye.redscarf.user.common.constant.CacheConstants;
 import com.baiye.redscarf.user.common.form.LoginForm;
 import com.baiye.redscarf.user.common.vo.LoginVo;
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
-import com.baiye.redscarf.user.rpc.rpcService.ILoginService;
-import com.baiye.redscarf.user.service.UserAccountService;
+import com.baiye.redscarf.user.service.rpcService.ILoginService;
+import com.baiye.redscarf.user.service.biz.UserAccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -39,5 +40,11 @@ public class ILoginServiceImpl implements ILoginService {
         String key = CacheConstants.USER_LOGIN_PREFIX + token;
         cacheService.set(key, uae, 7, TimeUnit.DAYS);
         return new LoginVo(token);
+    }
+
+    @Override
+    public void loginOut(BaseForm form) {
+        String key = CacheConstants.USER_LOGIN_PREFIX + form.getToken();
+        cacheService.delete(key);
     }
 }

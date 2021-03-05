@@ -1,7 +1,7 @@
-package com.baiye.redscarf.user.service.impl;
+package com.baiye.redscarf.user.service.biz.impl;
 
 import com.baiye.redscarf.user.dao.mapper.UserSiegeMapper;
-import com.baiye.redscarf.user.service.UserSiegeService;
+import com.baiye.redscarf.user.service.biz.UserSiegeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -15,4 +15,10 @@ public class UserSiegeServiceImpl implements UserSiegeService {
 
     @Resource
     private UserSiegeMapper userSiegeMapper;
+
+    @Override
+    public Integer countUserCollectNum(Long id) {
+        Integer count = userSiegeMapper.countUserCollectNum(id);
+        return count == null ? 0 : count;
+    }
 }

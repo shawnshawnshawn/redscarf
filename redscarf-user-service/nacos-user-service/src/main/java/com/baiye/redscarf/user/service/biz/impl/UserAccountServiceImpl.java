@@ -1,10 +1,10 @@
-package com.baiye.redscarf.user.service.impl;
+package com.baiye.redscarf.user.service.biz.impl;
 
 import com.baiye.redscarf.common.enums.ResultCodeEnum;
 import com.baiye.redscarf.common.result.Result;
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
 import com.baiye.redscarf.user.dao.mapper.UserAccountMapper;
-import com.baiye.redscarf.user.service.UserAccountService;
+import com.baiye.redscarf.user.service.biz.UserAccountService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

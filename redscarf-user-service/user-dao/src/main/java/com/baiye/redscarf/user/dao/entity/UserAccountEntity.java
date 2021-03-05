@@ -22,6 +22,8 @@ public class UserAccountEntity {
 
     private Integer accountStatus;
 
+    private String intro;
+
     /**
      * 登录密码
      */

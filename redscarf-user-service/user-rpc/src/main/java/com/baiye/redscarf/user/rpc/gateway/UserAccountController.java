@@ -2,7 +2,8 @@ package com.baiye.redscarf.user.rpc.gateway;
 
 import com.baiye.redscarf.common.result.Result;
 import com.baiye.redscarf.user.common.dto.UserAccountDTO;
-import com.baiye.redscarf.user.rpc.rpcService.IUserAccountService;
+import com.baiye.redscarf.user.common.vo.UserDataVo;
+import com.baiye.redscarf.user.service.rpcService.IUserAccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,11 @@ public class UserAccountController {
     public Result<UserAccountDTO> get(@PathVariable("id") Long id) {
         log.info("ip -> {}, param -> {}", "", id);
         return Result.toResult(iUserAccountService.getUserAccountById(id));
+    }
+
+    @RequestMapping(value = "/getUserData/{id}", method = RequestMethod.GET)
+    public Result<UserDataVo> getUserData(@PathVariable("id") Long id) {
+        return Result.toResult(iUserAccountService.getUserData(id));
     }
 
 }

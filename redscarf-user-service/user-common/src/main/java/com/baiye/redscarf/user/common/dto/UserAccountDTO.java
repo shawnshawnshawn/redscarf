@@ -23,6 +23,12 @@ public class UserAccountDTO {
      */
     private String phoneNo;
 
+    private String avatarUrl;
+
+    private Integer accountStatus;
+
+    private String intro;
+
     /**
      * (0:未登录;1:已登录)
      */

@@ -1,5 +1,6 @@
-package com.baiye.redscarf.user.rpc.rpcService;
+package com.baiye.redscarf.user.service.rpcService;
 
+import com.baiye.redscarf.common.param.BaseForm;
 import com.baiye.redscarf.user.common.form.LoginForm;
 import com.baiye.redscarf.user.common.vo.LoginVo;
 
@@ -9,4 +10,6 @@ import com.baiye.redscarf.user.common.vo.LoginVo;
  **/
 public interface ILoginService {
     LoginVo login(LoginForm form);
+
+    void loginOut(BaseForm form);
 }

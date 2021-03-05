@@ -1,4 +1,4 @@
-package com.baiye.redscarf.user.service;
+package com.baiye.redscarf.user.service.biz;
 
 import com.baiye.redscarf.user.dao.entity.UserAccountEntity;
 

@@ -8,13 +8,14 @@
     <result column="avatar_url" property="avatarUrl" jdbcType="VARCHAR" />
     <result column="account_status" property="accountStatus" jdbcType="INTEGER" />
     <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="intro" property="intro" jdbcType="VARCHAR" />
     <result column="login_status" property="loginStatus" jdbcType="INTEGER" />
     <result column="login_time" property="loginTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, nick_name, phone_no, avatar_url, account_status, `password`, login_status, login_time, update_time, create_time
+    id, nick_name, phone_no, avatar_url, account_status, `password`, intro, login_status, login_time, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -28,11 +29,11 @@
   </delete>
   <insert id="insert" parameterType="com.baiye.redscarf.user.dao.entity.UserAccountEntity" >
     insert into tbl_user_account_info (id, nick_name, phone_no, avatar_url, account_status,
-      `password`, login_status, login_time, 
+      `password`, intro, login_status, login_time,
       update_time, create_time)
     values (#{id,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR},
             #{avatarUrl,jdbcType=VARCHAR},#{accountStatus,jdbcType=INTEGER},
-            #{password,jdbcType=VARCHAR}, #{loginStatus,jdbcType=INTEGER}, #{loginTime,jdbcType=TIMESTAMP},
+            #{password,jdbcType=VARCHAR},  #{intro,jdbcType=VARCHAR}, #{loginStatus,jdbcType=INTEGER}, #{loginTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.baiye.redscarf.user.dao.entity.UserAccountEntity" >
@@ -52,6 +53,9 @@
       </if>
       <if test="accountStatus != null" >
         account_status,
+      </if>
+      <if test="intro != null" >
+        intro,
       </if>
       <if test="password != null" >
         `password`,
@@ -88,6 +92,9 @@
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
+      <if test="intro != null" >
+        #{intro,jdbcType=VARCHAR},
+      </if>
       <if test="loginStatus != null" >
         #{loginStatus,jdbcType=INTEGER},
       </if>
@@ -120,6 +127,9 @@
       <if test="password != null" >
         `password` = #{password,jdbcType=VARCHAR},
       </if>
+      <if test="intro != null" >
+        intro = #{intro,jdbcType=VARCHAR},
+      </if>
       <if test="loginStatus != null" >
         login_status = #{loginStatus,jdbcType=INTEGER},
       </if>
@@ -142,6 +152,7 @@
       avatar_url = #{avatarUrl,jdbcType=VARCHAR},
       account_status = #{accountStatus,jdbcType=INTEGER},
       `password` = #{password,jdbcType=VARCHAR},
+      intro = #{intro,jdbcType=VARCHAR},
       login_status = #{loginStatus,jdbcType=INTEGER},
       login_time = #{loginTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -149,6 +160,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
+<!-- user-defined -->
   <select id="selectByPhoneNoAndPassword" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
