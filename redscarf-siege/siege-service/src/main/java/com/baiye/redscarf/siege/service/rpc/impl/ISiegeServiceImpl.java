@@ -1,10 +1,15 @@
 package com.baiye.redscarf.siege.service.rpc.impl;
 
+import com.baiye.redscarf.common.param.BaseForm;
 import com.baiye.redscarf.common.result.PageVo;
+import com.baiye.redscarf.common.util.DataConverterUtils;
+import com.baiye.redscarf.siege.common.vo.GetSiegeVo;
+import com.baiye.redscarf.siege.dao.elastic.SiegeElastic;
 import com.baiye.redscarf.siege.dao.entity.SiegeDataEntity;
 import com.baiye.redscarf.siege.dao.entity.SiegePostsEntity;
 import com.baiye.redscarf.siege.service.biz.SiegeDataService;
 import com.baiye.redscarf.siege.service.biz.SiegePostsService;
+import com.baiye.redscarf.siege.service.elastic.SiegeElasticService;
 import com.baiye.redscarf.siege.service.reference.service.FeignUserService;
 import com.baiye.redscarf.siege.service.rpc.ISiegeService;
 import com.baiye.redscarf.siege.common.dto.UserAccountDto;
@@ -39,6 +44,9 @@ public class ISiegeServiceImpl implements ISiegeService {
     @Resource
     private FeignUserService feignUserService;
 
+    @Resource
+    private SiegeElasticService siegeElasticService;
+
     @Override
     public PageVo<SiegeListVo> listSiegePage(String siegeType, SiegeListForm form) {
         PageQuerySiegeConditions obj = new PageQuerySiegeConditions();
@@ -67,5 +75,25 @@ public class ISiegeServiceImpl implements ISiegeService {
             siegeListVoPageVo.setDtos(vos);
         }
         return siegeListVoPageVo;
+    }
+
+    @Override
+    public GetSiegeVo getSiege(Long id, BaseForm form) {
+        SiegeElastic se = siegeElasticService.findById(id);
+        log.info("siege -> {}", se);
+        GetSiegeVo vo = new GetSiegeVo();
+        vo.setSiegeTitle(se.getSiege_title());
+        vo.setSiegeType(se.getSiege_type());
+        vo.setUpNum(se.getUp_num());
+        vo.setSiegeImages(se.getSiege_images());
+        vo.setSiegeInfo(se.getSiege_info());
+        vo.setCollectNum(se.getCollect_num());
+        vo.setCreateTime(se.getCreate_time());
+        vo.setDownNum(se.getDown_num());
+        vo.setForwardNum(se.getForward_num());
+        vo.setId(se.get_id());
+        vo.setSiegeStatus(se.getSiege_status());
+        vo.setUserId(se.getUser_id());
+        return vo;
     }
 }

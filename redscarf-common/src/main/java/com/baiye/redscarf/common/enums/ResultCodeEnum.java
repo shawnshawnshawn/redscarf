@@ -69,6 +69,8 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
 
     SIEGE_NOT_EXIST(1002, "围城帖子不存在"),
 
+    ELASTIC_RESULT_NULL(1003, "elastic查询结果为空"),
+
 
 
 

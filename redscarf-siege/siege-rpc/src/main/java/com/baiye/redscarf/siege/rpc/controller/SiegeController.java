@@ -1,6 +1,9 @@
 package com.baiye.redscarf.siege.rpc.controller;
 
+import com.baiye.redscarf.common.param.BaseForm;
 import com.baiye.redscarf.common.result.PageResult;
+import com.baiye.redscarf.common.result.Result;
+import com.baiye.redscarf.siege.common.vo.GetSiegeVo;
 import com.baiye.redscarf.siege.service.rpc.ISiegeService;
 import com.baiye.redscarf.siege.common.form.SiegeListForm;
 import com.baiye.redscarf.siege.common.vo.SiegeListVo;
@@ -25,5 +28,10 @@ public class SiegeController {
     @RequestMapping(value = "/listSiegePage/{siegeType}", method = RequestMethod.GET)
     public PageResult<SiegeListVo> listSiegePage(@PathVariable("siegeType") String siegeType, SiegeListForm form) {
         return PageResult.toPageResult(iSiegeService.listSiegePage(siegeType, form));
+    }
+
+    @RequestMapping(value = "/getSiege/{id}", method = RequestMethod.GET)
+    public Result<GetSiegeVo> getSiege(@PathVariable("id") Long id, BaseForm form) {
+        return Result.toResult(iSiegeService.getSiege(id, form));
     }
 }

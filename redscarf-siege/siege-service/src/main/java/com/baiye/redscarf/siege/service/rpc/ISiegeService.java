@@ -1,7 +1,9 @@
 package com.baiye.redscarf.siege.service.rpc;
 
+import com.baiye.redscarf.common.param.BaseForm;
 import com.baiye.redscarf.common.result.PageVo;
 import com.baiye.redscarf.siege.common.form.SiegeListForm;
+import com.baiye.redscarf.siege.common.vo.GetSiegeVo;
 import com.baiye.redscarf.siege.common.vo.SiegeListVo;
 
 /**
@@ -10,4 +12,6 @@ import com.baiye.redscarf.siege.common.vo.SiegeListVo;
  **/
 public interface ISiegeService {
     PageVo<SiegeListVo> listSiegePage(String siegeType, SiegeListForm form);
+
+    GetSiegeVo getSiege(Long id, BaseForm form);
 }
