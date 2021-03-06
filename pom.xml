@@ -13,6 +13,7 @@
         <module>redscarf-gateway</module>
         <module>redscarf-siege</module>
         <module>redscarf-cache</module>
+        <module>redscarf-item</module>
     </modules>
 
 </project>
