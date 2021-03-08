@@ -54,6 +54,11 @@ redscarf
  |--siege-rpc
  |--siege-service
  |-redscarf-cache
+ |-redscarf-item
+ |-item-common
+ |-item-dao
+ |-item-rpc
+ |-item-service
  ...
 ```
 ### 必要服务
@@ -68,7 +73,8 @@ redscarf
 2. [redscarf-gateway](/redscarf-gateway)项目网关
 3. [redscarf-user-service](/redscarf-user-service)用户相关会员服务
 4. [redscarf-cache](/redscarf-cache)项目缓存服务   
-5. [redscarf-siege](/redscarf-siege)围城(帖子)业务服务   
+5. [redscarf-siege](/redscarf-siege)围城(帖子)业务服务
+6. [redscarf-item](/redscarf-item)商品服务   
 6. ...
 
 #### 说明
