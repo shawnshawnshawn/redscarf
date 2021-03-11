@@ -24,13 +24,13 @@ public SpringApplication(ResourceLoader resourceLoader, Class<?>... primarySourc
 `resourceLoader`：资源加载器，它只加载`classpath:`下的单资源文件，多资源文件加载在它的子接口`ResourcePatternResolver`中实现。  
 `primarySources`：要加载的主要资源，既是启动类  
 主要代码是上面四个带编号的代码：  
-①：获取应用的类型，分别有`REACTIVE`、`NONE`、`SERVLET`
-`REACTIVE`：应用程序应该作为一个响应式web应用程序运行，并且应该启动一个嵌入式响应式web服务器。
-`SERVLET`：应用程序应该作为基于servlet的web应用程序运行，并且应该启动嵌入式servlet web服务器。
-`NONE`：应用程序不应该作为web应用程序运行，也不应该启动嵌入式web服务器。  
-②：使用SpringFactoriesLoader查找并加载 classpath下`META-INF/spring.factories`文件中所有可用的 ApplicationContextInitializer  
-③：使用SpringFactoriesLoader查找并加载 classpath下`META-INF/spring.factories`文件中的所有可用的 ApplicationListener  
-④：设置main方法的定义类（不得不吐槽一下，从异常中获取方法名称，真有他们的）
+①：获取应用的类型，分别有`REACTIVE`、`NONE`、`SERVLET`;  
+`REACTIVE`：应用程序应该作为一个响应式web应用程序运行，并且应该启动一个嵌入式响应式web服务器。  
+`SERVLET`：应用程序应该作为基于servlet的web应用程序运行，并且应该启动嵌入式servlet web服务器。  
+`NONE`：应用程序不应该作为web应用程序运行，也不应该启动嵌入式web服务器。    
+②：使用SpringFactoriesLoader查找并加载 classpath下`META-INF/spring.factories`文件中所有可用的 ApplicationContextInitializer    
+③：使用SpringFactoriesLoader查找并加载 classpath下`META-INF/spring.factories`文件中的所有可用的 ApplicationListener    
+④：设置main方法的定义类（不得不吐槽一下，从异常中获取方法名称，真有他们的）    
 以上就完成SpringApplication实例化
 * 第二步调用run方法
 源码如下，我直接结合源码解释每一步都干了啥
