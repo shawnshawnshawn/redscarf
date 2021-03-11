@@ -16,8 +16,8 @@
   server-id=1
   ```
 * 然后重启mysql，简单测试配置是否生效  
-  ![img.png](img.png)
-  ![img_1.png](img_1.png)
+  ![img.png](images/img.png)
+  ![img_1.png](images/img_1.png)
 
 ### elasticsearch
 * 到[官网](https://www.elastic.co/cn/downloads/past-releases#elasticsearch)下载jar包
@@ -90,8 +90,8 @@
   vim conf/application.yml
   ```
 * 配置`application.yml`中mysql和es相关配置  
-  ![img_2.png](img_2.png)
-  ![img_3.png](img_3.png)  
+  ![img_2.png](images/img_2.png)
+  ![img_3.png](images/img_3.png)  
   1. name：设为es7
   2. key：很关键不能重复
   3. mode：选择rest
@@ -99,7 +99,7 @@
   5. cluster.name：elasticsearch节点名称
   6. 然后保存退出
 * 进入`/es7`,新建一个yml，我上面创建了siege索引，所以我创建`siege.yml`,添加索引映射  
-  ![img_4.png](img_4.png)  
+  ![img_4.png](images/img_4.png)  
   1. outerAdapterKey：与上面配置的保持一致  
   2. _index：索引名称  
   3. _id：指定唯一键  

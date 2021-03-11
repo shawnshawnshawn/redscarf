@@ -115,6 +115,7 @@
   > ```
 * 方式
   > [reindex数据迁移](/doc/elastic/es-reindex.md)
+  > update_by_query -> 在mapping上增加属性，然后刷新索引
   
 ## 文章参考引用
 * [理解ElasticSearch原理](https://www.jianshu.com/p/52b92f1a9c47)
