@@ -2,7 +2,10 @@
 
 ### 简介
 > 围绕springcloud相关技术设计的项目，目的是把所学技术统一，具体会涉及订单支付，移动论坛/博客，游戏资讯，后台以及日志。
-
+### 相关文档
+* [canal安装配置文档](/doc/canal-es.md)
+* [elasticsearch基本概念文档](/doc/elastic/es.md)
+* [elasticsearch数据迁移文档]()
 ### 技术概况
 
 基础框架spring系列:
@@ -80,5 +83,4 @@ redscarf
 #### 说明
 * 关于sentinel的规则持久化，目前使用nacos存储，修改规则也通过nacos配置文件修改，未使用sentinel-dashboard做动态修改。
 * mysql数据同步到elasticsearch使用的是alibaba canal组件，后面我会把具体文档同步过来。
-* canal安装配置[文档](/canal-es.md)
-* elasticsearch相关[文档](/es.md)
+

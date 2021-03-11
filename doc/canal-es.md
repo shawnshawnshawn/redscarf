@@ -16,8 +16,8 @@
   server-id=1
   ```
 * 然后重启mysql，简单测试配置是否生效
-  ![img.png](doc/img.png)
-  ![img_1.png](doc/img_1.png)
+  ![img.png](img.png)
+  ![img_1.png](img_1.png)
 
 ### elasticsearch
 * 到[官网](https://www.elastic.co/cn/downloads/past-releases#elasticsearch)下载jar包
@@ -90,21 +90,21 @@
   vim conf/application.yml
   ```
 * 配置application.yml中mysql和es相关配置
-  ![img_2.png](doc/img_2.png)
-  ![img_3.png](doc/img_3.png)
+  ![img_2.png](img_2.png)
+  ![img_3.png](img_3.png)
   name：设为es7
   key：很关键不能重复
   mode：选择rest
   security.auth：登录elasticsearch的账号密码（当mode为rest才启用）
   cluster.name：elasticsearch节点名称
   然后保存退出
-* 进入/es7,新建一个yml，我上面创建了siege索引，所以我创建siege.yml,添加索引映射
-  ![img_4.png](doc/img_4.png)
-  outerAdapterKey：与上面配置的保持一致
-  _index：索引名称
-  _id：指定唯一键
-  sql：定义MySQL数据到ES数据的映射字段，具体规则可看[官方文档](https://github.com/alibaba/canal/wiki/Sync-ES)
-  然后保存退出
-* 进入bin/,执行start.sh启动canal-adapter
-  查看日志：tail -100f logs/adapter/adapter.log
+* 进入/es7,新建一个yml，我上面创建了siege索引，所以我创建siege.yml,添加索引映射  
+  ![img_4.png](img_4.png)
+  outerAdapterKey：与上面配置的保持一致  
+  _index：索引名称  
+  _id：指定唯一键  
+  sql：定义MySQL数据到ES数据的映射字段，具体规则可看[官方文档](https://github.com/alibaba/canal/wiki/Sync-ES)  
+  然后保存退出  
+* 进入bin/,执行start.sh启动canal-adapter  
+  查看日志：tail -100f logs/adapter/adapter.log  
   在mysql数据库中添加数据，验证canal是否同步数据或者下载elasticsearch chrom插件看索引保存数据是否与数据库数据同步
