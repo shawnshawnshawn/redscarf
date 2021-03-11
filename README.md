@@ -6,6 +6,7 @@
 * [canal安装配置文档](/doc/canal-es.md)
 * [elasticsearch基本概念文档](/doc/elastic/es.md)
 * [elasticsearch数据迁移文档](/doc/elastic/es-reindex.md)
+* [springboot启动过程解析](/doc/spring/springboot-start.md)
 ### 技术概况
 
 基础框架spring系列:
