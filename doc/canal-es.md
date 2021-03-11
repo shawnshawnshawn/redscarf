@@ -15,7 +15,7 @@
   binlog-format=ROW
   server-id=1
   ```
-* 然后重启mysql，简单测试配置是否生效
+* 然后重启mysql，简单测试配置是否生效  
   ![img.png](img.png)
   ![img_1.png](img_1.png)
 
@@ -89,7 +89,7 @@
   tar -zxvf canal.adapter-1.1.5-SNAPSHOT.tar.gz -C canal-adapter/
   vim conf/application.yml
   ```
-* 配置application.yml中mysql和es相关配置
+* 配置application.yml中mysql和es相关配置  
   ![img_2.png](img_2.png)
   ![img_3.png](img_3.png)
   name：设为es7
