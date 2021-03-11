@@ -2,7 +2,7 @@
 
 ### 简介
 > 围绕springcloud相关技术设计的项目，目的是把所学技术统一，具体会涉及订单支付，移动论坛/博客，游戏资讯，后台以及日志。
-### 相关文档
+### 技术文档
 * [canal安装配置文档](/doc/canal-es.md)
 * [elasticsearch基本概念文档](/doc/elastic/es.md)
 * [elasticsearch数据迁移文档](/doc/elastic/es-reindex.md)
