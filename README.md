@@ -35,7 +35,7 @@
 #### Others
 * RocketMQ 消息分发
 * Elasticsearch 大数据搜索
-* OSS 阿里云静态文件存储
+* OSS 阿里云资源文件存储
 * Elastic-job 分布式调度任务
 * WeChatPay 微信支付
 * Canal 数据同步  
