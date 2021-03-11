@@ -21,10 +21,10 @@
 	}
   }
   ```
-> b.现在把上面一个索引的user_id类型变成string
-> c.创建新索引 put /test-v2
-> "number_of_replicas": "0" 副本先设置为0，防止我们迁移文档的同时又发送到副本节点，影响性能
-> "refresh_interval": "-1" 限制其刷新
+> b.现在把上面一个索引的user_id类型变成string  
+> c.创建新索引 put /test-v2  
+> "number_of_replicas": "0" 副本先设置为0，防止我们迁移文档的同时又发送到副本节点，影响性能  
+> "refresh_interval": "-1" 限制其刷新  
   ```
   {
 	"settings": {
