@@ -5,7 +5,7 @@
 ### 相关文档
 * [canal安装配置文档](/doc/canal-es.md)
 * [elasticsearch基本概念文档](/doc/elastic/es.md)
-* [elasticsearch数据迁移文档]()
+* [elasticsearch数据迁移文档](/doc/elastic/es-reindex.md)
 ### 技术概况
 
 基础框架spring系列:
