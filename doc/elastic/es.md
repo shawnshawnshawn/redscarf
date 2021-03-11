@@ -41,9 +41,32 @@
   3.其它缓存(像filter缓存)，在索引的生命周期内始终有效。它们不需要在每次数据改变时被重建，因为数据不会变化。  
   4.写入单个大的倒排索引允许数据压缩，减少磁盘 I/O 和 需要被缓存到内存的索引的使用量。  
   
-  
   3. 分片  
-  >
+  > 什么是分片
+  ```
+  分片是 Elasticsearch 在集群中分发数据的关键。  
+  把分片想象成数据的容器。文档存储在分片中，然后分片分配到集群中的节点上。当集群扩容或缩小，Elasticsearch 将会自动在节点间迁移分片，以使集群保持平衡。  
+  一个分片(shard)是一个最小级别“工作单元(worker unit)”，它只是保存了索引中所有数据的一部分。  
+  这类似于 MySql 的分库分表，只不过 Mysql 分库分表需要借助第三方组件而 ES 内部自身实现了此功能。  
+  分片可以是主分片(primary shard)或者是复制分片(replica shard)。
+  ```
+  > a. 主分片  
+  ```
+  {
+    "settings": {
+        "number_of_shards": 3,
+        "number_of_replicas": 1
+    }
+  }
+  number_of_shards：表示主分片的数量  
+  number_of_replicas：表示分片副本，既复制分片
+  ```
+  > 主分片一旦创建便不可修改，原因与多分片的索引写入数据有关  
+  ```
+  shard = hash(routing) % number_of_primary_shards  
+  routing 是一个可变值，默认是文档的 _id ，也可以设置成一个自定义的值。routing 通过 hash 函数生成一个数字，然后这个数字再除以 number_of_primary_shards （主分片的数量）后得到余数 。这个在 0 到 number_of_primary_shards 之间的余数，就是所寻求的文档所在分片的位置。  
+  这解释了为什么要在创建索引的时候就确定好主分片的数量并且永远不会改变这个数量：因为如果数量变化了，那么所有之前路由的值都会无效，文档也再也找不到了。
+  ```
   4. 副本  
   >
   
@@ -72,7 +95,7 @@
   > b. 选举时机  
   > 集群启动：后台启动线程去ping集群中的节点，按照上述策略从具有master资格的节点中选举出master
   > 现有的master离开集群：后台一直有一个线程定时ping master节点，超过一定次数没有ping成功之后，重新进行master的选举  
-  > c. 避免脑裂  
+  > c. 避免脑裂(不能百分百防止）  
   > 脑裂问题是采用master-slave模式的分布式集群普遍需要关注的问题，脑裂一旦出现，会导致集群的状态出现不一致，导致数据错误甚至丢失。
   > ES避免脑裂的策略：过半原则，可以在ES的集群配置中添加一下配置，避免脑裂的发生 (节点数/2 + 1)
 ## 索引重建
@@ -94,4 +117,4 @@
 * [理解ElasticSearch原理](https://www.jianshu.com/p/52b92f1a9c47)
 * [elasticsearch脑裂解释](https://segmentfault.com/a/1190000004504225)
 * [elasticsearch之reindex数据迁移](https://rstyro.github.io/blog/2020/10/23/Elasticsearch7%E4%B9%8BReindex%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E8%AF%A6%E8%A7%A3/)
-    
+* [分片的概念](https://www.jianshu.com/p/cc06f9adbe82)    
