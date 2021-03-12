@@ -1,4 +1,4 @@
-package com.baiye.redscarf.item.rpc;
+package com.baiye.redscarf.item;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +11,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @date 2021/3/7 12:06 上午
  **/
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.baiye.redscarf.item.service.reference.feign")
-@MapperScan(basePackages = "com.baiye.redscarf.item.dao.mapper")
+@EnableFeignClients(basePackages = "com.baiye.redscarf.item.reference.feign")
+@MapperScan(basePackages = "com.baiye.redscarf.item.mapper")
 @SpringBootApplication(scanBasePackages = "com.baiye.redscarf.item")
 public class ItemApplication {
     public static void main(String[] args) {
