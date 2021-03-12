@@ -72,7 +72,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package: com.baiye.redscarf.user.dao.entity
+  type-aliases-package: com.baiye.redscarf.user.entity
 
 feign:
   sentinel:

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.baiye.redscarf.siege.dao.mapper.SiegePostsMapper" >
-  <resultMap id="BaseResultMap" type="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+<mapper namespace="com.baiye.redscarf.siege.mapper.SiegePostsMapper" >
+  <resultMap id="BaseResultMap" type="com.baiye.redscarf.siege.entity.SiegePostsEntity" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="siege_title" property="siegeTitle" jdbcType="VARCHAR" />
@@ -26,7 +26,7 @@
     delete from tbl_siege_posts
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+  <insert id="insert" parameterType="com.baiye.redscarf.siege.entity.SiegePostsEntity" >
     insert into tbl_siege_posts (id, user_id, siege_title, 
       siege_type, siege_images, siege_info, 
       siege_status, update_time, create_time
@@ -36,7 +36,7 @@
       #{siegeStatus,jdbcType=BIT}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+  <insert id="insertSelective" parameterType="com.baiye.redscarf.siege.entity.SiegePostsEntity" >
     insert into tbl_siege_posts
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.siege.entity.SiegePostsEntity" >
     update tbl_siege_posts
     <set >
       <if test="userId != null" >
@@ -127,7 +127,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.siege.dao.entity.SiegePostsEntity" >
+  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.siege.entity.SiegePostsEntity" >
     update tbl_siege_posts
     set user_id = #{userId,jdbcType=BIGINT},
       siege_title = #{siegeTitle,jdbcType=VARCHAR},
@@ -141,7 +141,7 @@
   </update>
 
 <!-- user-defined -->
-  <select id="pageQuerySiegeByConditions" resultMap="BaseResultMap" parameterType="com.baiye.redscarf.siege.common.obj.PageQuerySiegeConditions">
+  <select id="pageQuerySiegeByConditions" resultMap="BaseResultMap" parameterType="com.baiye.redscarf.siege.obj.PageQuerySiegeConditions">
     select
     <include refid="Base_Column_List" />
     from tbl_siege_posts
@@ -153,7 +153,7 @@
     limit #{startPage}, #{pageSize}
   </select>
 
-  <select id="countSiegeByConditions" resultType="java.lang.Integer" parameterType="com.baiye.redscarf.siege.common.obj.PageQuerySiegeConditions">
+  <select id="countSiegeByConditions" resultType="java.lang.Integer" parameterType="com.baiye.redscarf.siege.obj.PageQuerySiegeConditions">
     select
     count(*)
     from tbl_siege_posts

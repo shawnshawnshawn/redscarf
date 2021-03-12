@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.baiye.redscarf.user.dao.mapper.UserSiegeMapper" >
-  <resultMap id="BaseResultMap" type="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+<mapper namespace="com.baiye.redscarf.user.mapper.UserSiegeMapper" >
+  <resultMap id="BaseResultMap" type="com.baiye.redscarf.user.entity.UserSiegeEntity" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
     <result column="siege_id" property="siegeId" jdbcType="BIGINT" />
@@ -28,7 +28,7 @@
     delete from tbl_user_siege
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+  <insert id="insert" parameterType="com.baiye.redscarf.user.entity.UserSiegeEntity" >
     insert into tbl_user_siege (id, user_id, siege_id, 
       is_up, up_time, is_collect, 
       collect_time, is_forward, forward_time, 
@@ -38,7 +38,7 @@
       #{collectTime,jdbcType=TIMESTAMP}, #{isForward,jdbcType=BIT}, #{forwardTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+  <insert id="insertSelective" parameterType="com.baiye.redscarf.user.entity.UserSiegeEntity" >
     insert into tbl_user_siege
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.baiye.redscarf.user.entity.UserSiegeEntity" >
     update tbl_user_siege
     <set >
       <if test="userId != null" >
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.user.dao.entity.UserSiegeEntity" >
+  <update id="updateByPrimaryKey" parameterType="com.baiye.redscarf.user.entity.UserSiegeEntity" >
     update tbl_user_siege
     set user_id = #{userId,jdbcType=BIGINT},
       siege_id = #{siegeId,jdbcType=BIGINT},

@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @date 2021/3/11 5:13 下午
  **/
 @EnableDiscoveryClient
-@MapperScan(basePackages = "com.baiye.redscarf.pay.dao.mapper")
+@MapperScan(basePackages = "com.baiye.redscarf.pay.mapper")
 @SpringBootApplication(scanBasePackages = "com.baiye.redscarf.pay")
 public class PayApplication {
 
