@@ -1,0 +1,79 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /pay-server
+
+spring:
+  application:
+    name: redscarf-pay-service-dev
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: http://47.110.149.15:8848
+    sentinel:
+      transport:
+        dashboard: 47.110.149.15:8080
+      datasource:
+        ns:
+          nacos:
+            serverAddr: 47.110.149.15:8848
+            username: nacos
+            password: nacos
+            groupId: SENTINEL_GROUP
+            dataId: ${spring.application.name}-flow-rules
+            namespace: 016a7c5e-df72-45b2-925d-2a5046d5c0d1
+            ruleType: flow
+  datasource:
+    druid:
+      url: jdbc:mysql://47.110.149.15:3306/redscarf?serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&useUnicode=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root123.
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 60000
+      # 是否缓存preparedStatement，也就是PSCache。
+      pool-prepared-statements: false
+      # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。
+      max-pool-prepared-statement-per-connection-size: -1
+      # 用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。
+      validation-query: SELECT 'x'
+      # 单位：秒，检测连接是否有效的超时时间。
+      validation-query-timeout: 1
+      # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+      test-on-return: false
+      # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行                validationQuery检测连接是否有效。
+      test-while-idle: true
+      # 有两个含义：1) Destroy线程会检测连接的间隔时间，如果连接空闲时间大于等于minEvictableIdleTimeMillis则关闭物理连接。2)               testWhileIdle的判断依据，详细看testWhileIdle属性的说明
+      time-between-eviction-runs-millis: 6000
+      # 连接保持空闲而不被驱逐的最小时间
+      min-evictable-idle-time-millis: 1800000
+      # 监控页面相关配置
+      stat-view-servlet:
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+        enabled: true
+      # filter相关配置
+      filter:
+        stat:
+          slow-sql-millis: 5000
+          log-slow-sql: true
+          enabled: true
+  redis:
+    host: 39.102.73.172
+    password: Qipinredis1!
+    port: 6376
+    database: 3
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.baiye.redscarf.pay.dao.entity
+
+feign:
+  sentinel:
+    enabled: true

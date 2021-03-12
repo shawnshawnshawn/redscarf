@@ -1,12 +1,10 @@
 package com.baiye.redscarf.siege.service.elastic.impl;
 
-import com.alibaba.csp.sentinel.util.AssertUtil;
 import com.baiye.redscarf.common.enums.ResultCodeEnum;
 import com.baiye.redscarf.common.result.Result;
 import com.baiye.redscarf.siege.dao.elastic.SiegeElastic;
 import com.baiye.redscarf.siege.dao.elastic.SiegeRepository;
 import com.baiye.redscarf.siege.service.elastic.SiegeElasticService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

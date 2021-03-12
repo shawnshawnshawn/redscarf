@@ -14,6 +14,7 @@
         <module>redscarf-siege</module>
         <module>redscarf-cache</module>
         <module>redscarf-item</module>
+        <module>redscarf-pay</module>
     </modules>
 
 </project>

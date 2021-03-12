@@ -25,6 +25,7 @@ spring:
             ruleType: flow
     gateway:
       routes:
+        # 用户服务路由
         - id: redscarf-user-service-dev_1
           uri: http://localhost:8081
           predicates:
@@ -33,6 +34,8 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/user-server/{param0}/{param1}
+
+        # 帖子服务路由
         - id: redscarf-siege-service-dev_1
           uri: http://localhost:8082
           predicates:
@@ -41,6 +44,25 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=/siege-server/{param0}/{param1}
+
+        ## item 服务路由
+        - id: redscarf-item-service-dev_1
+            uri: http://localhost:8084
+            predicates:
+              - Path=/item-server/{param0}/{param1}/{param2}
+        - id: redscarf-item-service-dev_2
+          uri: http://localhost:8084
+          predicates:
+            - Path=/item-server/{param0}/{param1}
+        # 支付服务路由
+        - id: redscarf-pay-service-dev_1
+            uri: http://localhost:8085
+            predicates:
+              - Path=/pay-server/{param0}/{param1}/{param2}
+        - id: redscarf-pay-service-dev_2
+          uri: http://localhost:8085
+          predicates:
+            - Path=/pay-server/{param0}/{param1}
   #service-url:
   #nacos-user-service: http://redscarf-user-service-dev
 feign:
