@@ -63,6 +63,11 @@ redscarf
  |-item-dao
  |-item-rpc
  |-item-service
+ |-redscarf-pay
+ |-pay-common
+ |-pay-dao
+ |-pay-rpc
+ |-pay-service
  ...
 ```
 ### 必要服务
@@ -79,6 +84,7 @@ redscarf
 4. [redscarf-cache](/redscarf-cache)项目缓存服务   
 5. [redscarf-siege](/redscarf-siege)围城(帖子)业务服务
 6. [redscarf-item](/redscarf-item)商品服务   
+6. [redscarf-pay](/redscarf-pay)支付服务   
 6. ...
 
 #### 说明
