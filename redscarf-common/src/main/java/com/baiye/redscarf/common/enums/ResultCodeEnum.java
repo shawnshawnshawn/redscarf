@@ -71,12 +71,18 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
 
     ELASTIC_RESULT_NULL(1003, "elastic查询结果为空"),
 
+    SIGNATURE_SERVICE_NOT_EXIST(1004, "不存在的签名服务"),
+
+    PAY_SERVICE_NOT_EXIST(1005, "不存在的支付服务"),
+
 
 
 
 
 //    --------- 微信异常码 ---------
     ACCESS_TOKEN_INVALID(40001, "微信access_token无效"),
+
+    WECHAT_PRE_PAY_ERROR(40002, "获取微信预支付订单失败"),
 
     ;
 
