@@ -37,7 +37,7 @@
 * Elasticsearch 大数据搜索
 * OSS 阿里云资源文件存储
 * Elastic-job 分布式调度任务
-* 聚合支付
+* wechat支付
 * Canal 数据同步  
 * ...
 
