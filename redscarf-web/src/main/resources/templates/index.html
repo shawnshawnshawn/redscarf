@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>用户名</th>
+        <th>标题</th>
+    </tr>
+    <tr th:each="siege : ${siegeList}">
+        <td th:text="${siege.nickName}"></td>
+        <td th:text="${siege.siegeTitle}"></td>
+    </tr>
+</table>
+</body>
+</html>

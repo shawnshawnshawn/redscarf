@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /web
+  port: 8086
+spring:
+  thymeleaf:
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    mode: HTML
+    cache: false
+  application:
+    name: redscarf-siege-service-dev
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: http://47.110.149.15:8848
