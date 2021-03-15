@@ -1,6 +1,9 @@
 package com.baiye.redscarf.siege.elastic;
 
+import com.baiye.redscarf.common.result.PageVo;
 import com.baiye.redscarf.siege.elastic.SiegeElastic;
+import com.baiye.redscarf.siege.vo.SiegeListVo;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 
 /**
  * @author baiye
@@ -8,4 +11,7 @@ import com.baiye.redscarf.siege.elastic.SiegeElastic;
  **/
 public interface SiegeElasticService {
     SiegeElastic findById(Long id);
+
+    PageVo<SiegeListVo> search(NativeSearchQuery searchQueryBuilder);
+
 }
