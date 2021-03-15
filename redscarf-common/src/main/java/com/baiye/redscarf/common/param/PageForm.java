@@ -13,7 +13,7 @@ public class PageForm extends BaseForm{
 
     private Integer pageNo = 1;
 
-    private Integer pageSize;
+    private Integer pageSize = 10;
 
     public Integer startPage() {
         return (this.pageNo - 1) * pageSize;

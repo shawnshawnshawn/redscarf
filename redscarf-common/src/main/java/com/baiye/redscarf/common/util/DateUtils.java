@@ -15,6 +15,8 @@ public class DateUtils {
 
     final static String FORMAT_YMDHMS_DEFAULT = "yyyy-MM-dd HH:mm:ss";
 
+    final static String UTC_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+
     /**
      * 日期转成string类型
      * @param date
@@ -87,5 +89,17 @@ public class DateUtils {
         now.set(Calendar.MINUTE, 59);
         now.set(Calendar.SECOND, 59);
         return now.getTime();
+    }
+
+    public static Date utcToDate(String str) {
+        String utc = str.split("\\+")[0];
+        String replace = utc.replace("T", " ");
+        return parseDate(replace);
+    }
+
+    public static void main(String[] args) {
+        String utc = "2021-03-05T18:28:16+08:00";
+        Date date = utcToDate(utc);
+        System.out.println(date);
     }
 }
