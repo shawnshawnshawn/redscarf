@@ -1,28 +1,9 @@
 server:
   port: 8083
-  servlet:
-    context-path: /user-api
 spring:
   application:
     name: redscarf-gateway-dev
   cloud:
-    nacos:
-      discovery:
-        enabled: true
-        server-addr: http://47.110.149.15:8848
-    sentinel:
-      transport:
-        dashboard: 47.110.149.15:8080
-      datasource:
-        ns:
-          nacos:
-            serverAddr: 47.110.149.15:8848
-            username: nacos
-            password: nacos
-            groupId: SENTINEL_GROUP
-            dataId: ${spring.application.name}-flow-rules
-            namespace: 016a7c5e-df72-45b2-925d-2a5046d5c0d1
-            ruleType: flow
     gateway:
       routes:
         # 用户服务路由
@@ -63,8 +44,3 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/pay-server/{param0}/{param1}
-  #service-url:
-  #nacos-user-service: http://redscarf-user-service-dev
-feign:
-  sentinel:
-    enabled: true
