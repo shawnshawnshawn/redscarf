@@ -1,18 +1,15 @@
 package com.baiye.redscarf.siege.elastic;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-
-import java.util.Date;
 
 /**
  * @author baiye
  * @date 2021/3/7 12:55 上午
  **/
 @Data
-@Document(indexName = "siege")
+@Document(indexName = "siege-v1")
 public class SiegeElastic {
 
     @Id
