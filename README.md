@@ -33,12 +33,12 @@
 * Mybatis 持久层框架 
 
 #### Others
-* RocketMQ 消息分发
-* Elasticsearch 大数据搜索
-* OSS 阿里云资源文件存储
-* Elastic-job 分布式调度任务
-* wechat支付
-* Canal 数据同步  
+* [ ] RocketMQ 消息分发
+* [X] Elasticsearch 数据搜索
+* [ ] OSS 阿里云资源文件存储
+* [ ] Elastic-job 分布式调度任务
+* [X] wechat扫码支付
+* [X] Canal 数据同步  
 * ...
 
 
