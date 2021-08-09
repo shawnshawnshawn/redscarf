@@ -16,24 +16,24 @@
 | 2.3.2.RELEASE | Hoxton.SR8 | 2.2.5.RELEASE |
 
 #### Spring Cloud Alibaba
-* Nacos 实现注册中心
-* Nacos 实现配置中心
-* Sentinel  实现服务容错
-* Seata 实现分布式事务
+* [X] Nacos 实现注册中心
+* [X] Nacos 实现配置中心
+* [X] Sentinel  实现服务容错
+* [ ] Seata 实现分布式事务
 
 #### Spring Cloud
-* Ribbon 实现负载均衡
-* OpenFeign 实现远程调用
-* Gateway API网关
-* Sleuth 实现调用链监控
+* [X] Ribbon 实现负载均衡
+* [X] OpenFeign 实现远程调用
+* [X] Gateway API网关
+* [ ] Sleuth 实现调用链监控
 
 #### Spring Boot
-* Mysql 数据持久化
-* Redis 热点数据缓存
-* Mybatis 持久层框架 
+* [X] Mysql 数据持久化
+* [X] Redis 热点数据缓存
+* [X] Mybatis 持久层框架 
 
 #### Others
-* [ ] RocketMQ 消息分发
+* [ ] MQ 消息分发
 * [X] Elasticsearch 数据搜索
 * [X] OSS 阿里云资源文件存储
 * [ ] Elastic-job 分布式调度任务
@@ -41,6 +41,8 @@
 * [X] Canal 数据同步
 * [X] 自定义缓存CacheJ
 * [X] 瞬时qps限制
+* [X] 自定义日志(实时上传elasticsearch)
+* [ ] 自定义登录无状态
 * ...
 
 
