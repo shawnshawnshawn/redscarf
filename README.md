@@ -63,15 +63,15 @@ redscarf
  |--siege-service
  |-redscarf-cache
  |-redscarf-item
- |-item-common
- |-item-dao
- |-item-rpc
- |-item-service
+ |--item-common
+ |--item-dao
+ |--item-rpc
+ |--item-service
  |-redscarf-pay
- |-pay-common
- |-pay-dao
- |-pay-rpc
- |-pay-service
+ |--pay-common
+ |--pay-dao
+ |--pay-rpc
+ |--pay-service
  ...
 ```
 ### 必要服务
