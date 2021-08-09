@@ -35,10 +35,12 @@
 #### Others
 * [ ] RocketMQ 消息分发
 * [X] Elasticsearch 数据搜索
-* [ ] OSS 阿里云资源文件存储
+* [X] OSS 阿里云资源文件存储
 * [ ] Elastic-job 分布式调度任务
 * [X] wechat扫码支付
-* [X] Canal 数据同步  
+* [X] Canal 数据同步
+* [X] 自定义缓存CacheJ
+* [X] 瞬时qps限制
 * ...
 
 

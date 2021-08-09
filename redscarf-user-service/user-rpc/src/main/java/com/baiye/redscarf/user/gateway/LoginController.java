@@ -17,18 +17,18 @@ import javax.annotation.Resource;
  * @date 2021/3/4 3:44 下午
  **/
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/gate")
 public class LoginController {
 
     @Resource
     private ILoginService iLoginService;
 
-    @RequestMapping(value = "/up", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Result<LoginVo> login(@RequestBody LoginForm form) {
         return Result.toResult(iLoginService.login(form));
     }
 
-    @RequestMapping(value = "/out", method = RequestMethod.POST)
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public Result<Object> out(@RequestBody BaseForm form) {
         iLoginService.loginOut(form);
         return Result.ofSuccess();

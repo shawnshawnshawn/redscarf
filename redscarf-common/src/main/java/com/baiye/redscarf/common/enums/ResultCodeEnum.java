@@ -64,6 +64,13 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
 
     JSON_TO_LIST_ERROR(151, "转换数组失败"),
 
+    CACHE_KEY_NULL(152, "缓存key不能为空"),
+
+    ALIYUN_UPLOAD_IMAGE_ERROR(153, "阿里云上传图片异常"),
+
+    REQUEST_OFTEN(154, "请求频繁，请稍后再试！"),
+
+
     // ----------- siege ----------------
     SIEGE_TYPE_NOT_EXIST(1001, "围城城门不存在"),
 

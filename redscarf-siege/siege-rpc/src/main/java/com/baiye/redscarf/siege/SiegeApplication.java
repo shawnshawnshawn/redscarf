@@ -14,7 +14,7 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
  **/
 @EnableFeignClients(basePackages = "com.baiye.redscarf.siege.reference.feign")
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = "com.baiye.redscarf.siege")
+@SpringBootApplication(scanBasePackages = {"com.baiye.redscarf.siege", "com.baiye.redscarf.common"})
 @MapperScan(basePackages = "com.baiye.redscarf.siege.mapper")
 @EnableElasticsearchRepositories(basePackages = "com.baiye.redscarf.siege.elastic")
 public class SiegeApplication {
