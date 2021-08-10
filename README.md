@@ -46,6 +46,11 @@
 * [X] 瞬时qps限制RequestLimiter
 * [X] 自定义日志(实时上传elasticsearch)
 * [X] 登录无状态JWT+RSA非对称加密
+* [ ] 企业微信群通知
+* [ ] 钉钉群通知
+* [ ] OKHTTP封装
+* [ ] 枚举类发送短信(单行代码即可)
+* [X] 自定义统一校验参数
 * ...
 
 
@@ -53,7 +58,6 @@
 ```
 redscarf
  |-redscrf-common
- 
  |-redscarf-gateway
  |-redscarf-user-service
  |--nacos-user-service
