@@ -97,6 +97,12 @@ public class DateUtils {
         return parseDate(replace);
     }
 
+    public static String utcToDateStr(String utc) {
+        utc = utc.replace("Z", " UTC");
+        Date date = parseDateByFormat(utc, "yyyy-MM-dd'T'HH:mm:ss.SSS Z");
+        return DateUtils.parseString(date);
+    }
+
     public static void main(String[] args) {
         String utc = "2021-03-05T18:28:16+08:00";
         Date date = utcToDate(utc);

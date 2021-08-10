@@ -1,8 +1,8 @@
 package com.baiye.redscarf.common.check;
 
-import com.cheapp.work2.common.enums.ResultCodeEnum;
-import com.cheapp.work2.common.result.Result;
-import com.cheapp.work2.common.util.DateUtils;
+import com.baiye.redscarf.common.enums.ResultCodeEnum;
+import com.baiye.redscarf.common.result.Result;
+import com.baiye.redscarf.common.util.DateUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 

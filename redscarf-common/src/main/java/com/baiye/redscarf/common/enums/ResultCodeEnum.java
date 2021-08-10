@@ -14,6 +14,10 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
 
     SERVER_UNUSERFUL(-1, "服务不可用"),
 
+    LOGIN_ILLEGAL(11, "非法登录"),
+
+    NO_TOKEN_INFO(12, "登录TOKEN非法"),
+
     SERVER_ERROR(500, "服务器异常"),
 
     PARAM_NULL(100, "参数不能为空"),
@@ -69,6 +73,10 @@ public enum ResultCodeEnum implements EnumMsg<Integer> {
     ALIYUN_UPLOAD_IMAGE_ERROR(153, "阿里云上传图片异常"),
 
     REQUEST_OFTEN(154, "请求频繁，请稍后再试！"),
+
+    CHECK_PARAM_LENGTH_ERROR(155, "参数{0}长度不能大于{1}"),
+
+    PARAM_PATTERN_ERROR(156, "{0}--格式校验不通过，请确认输入是否正确！"),
 
 
     // ----------- siege ----------------
