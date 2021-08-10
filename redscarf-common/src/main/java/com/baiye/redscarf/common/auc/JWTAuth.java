@@ -40,9 +40,9 @@ public class JWTAuth {
             throw Result.toBizException(ResultCodeEnum.LOGIN_INVALID);
         }
         Claims claims = RSAUtils.verifyJwt(authorization);
-        String id = claims.getId();
+        Object id = claims.get("id");
         AuthID authId = AopUtils.getAuthId(point);
-        authId.setId(Long.valueOf(id));
+        authId.setId((Long) id);
         return point.proceed();
     }
 }

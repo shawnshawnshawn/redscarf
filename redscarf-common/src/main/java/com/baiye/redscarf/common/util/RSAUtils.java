@@ -76,7 +76,9 @@ public class RSAUtils {
         System.out.println(rsa_private_key);
         String jwt = createJwt("1");
         System.out.println(jwt);
-        Claims claims = verifyJwt("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJtYXJjbyIsInN1YiI6InRva2VuIiwiaWQiOiIxIn0.BUfrTpvnoob33fg4pdD1NpQGF7of8aFYovl407ZFaMCl63UqbH3HLyGhHl-t3_lU_D1c1C1Gd-4IHHDN2j5rkOI694QjMsPdhnuhiALPXp3NmzsSPxpeknL30965fH4v0ajZPk9JFGbiQNOYkZaeUT-xdmxk2vNr7-9kY3nsG5");
+        Claims claims = verifyJwt(jwt);
         System.out.println(claims);
+        Object id = claims.get("id");
+        System.out.println(id);
     }
 }
