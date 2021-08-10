@@ -7,6 +7,7 @@
 * [elasticsearch基本概念文档](/doc/elastic/es.md)
 * [elasticsearch数据迁移文档](/doc/elastic/es-reindex.md)
 * [springboot启动过程解析](/doc/spring/springboot-start.md)
+* [JWT描述文档](/doc/jwt.md)
 ### 技术概况
 
 基础框架spring系列:
@@ -42,7 +43,7 @@
 * [X] 自定义缓存CacheJ
 * [X] 瞬时qps限制
 * [X] 自定义日志(实时上传elasticsearch)
-* [ ] JWT+RSA非对称加密登录无状态
+* [X] JWT+RSA非对称加密登录无状态
 * ...
 
 
