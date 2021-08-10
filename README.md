@@ -43,9 +43,9 @@
 * [X] wechat扫码支付
 * [X] Canal 数据同步
 * [X] 自定义缓存CacheJ
-* [X] 瞬时qps限制
+* [X] 瞬时qps限制RequestLimiter
 * [X] 自定义日志(实时上传elasticsearch)
-* [X] JWT+RSA非对称加密登录无状态
+* [X] 登录无状态JWT+RSA非对称加密
 * ...
 
 
