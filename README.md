@@ -10,6 +10,7 @@
 * [JWT描述文档](/doc/jwt.md)
 * [接口文档(部分)](/doc/api.md)
 * [QPS限制功能文档](/doc/resLimit.md)
+* [短信发送及日志打印上传es文档](/doc/sms.md)
 ### 技术概况
 
 基础框架spring系列:
@@ -21,11 +22,11 @@
 #### Spring Cloud Alibaba
 * [X] Nacos 实现注册中心
 * [X] Nacos 实现配置中心
-* [X] Sentinel  实现服务容错
+* [X] Sentinel 实现服务容错
 * [ ] Seata 实现分布式事务
 
 #### Spring Cloud
-* [X] Ribbon 实现负载均衡
+* [X] Ribbon 实现负载均衡（弃用,已改为FeignClient）
 * [X] OpenFeign 实现远程调用
 * [X] Gateway API网关
 * [ ] Sleuth 实现调用链监控
@@ -49,7 +50,7 @@
 * [ ] 企业微信群通知
 * [ ] 钉钉群通知
 * [ ] OKHTTP封装
-* [ ] 枚举类发送短信(单行代码即可)
+* [X] 枚举类发送短信(单行代码即可)
 * [X] 自定义统一校验参数
 * ...
 
