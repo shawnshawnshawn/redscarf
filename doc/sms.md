@@ -38,14 +38,14 @@
 > ![img.png](/doc/images/img_9.png)![img.png](/doc/images/img_10.png)
 
 * 使用如下图，我们只需要像正常的日志使用即可，在打印日志的同时也会把日志上传到es服务器，即使上传失败报错也不会影响主流程业务，这里要注意尽量在业务代码中使用，如果能明确知道配置的加载顺序，保证ESClient在之前加载，也可在初始化配置中使用。
-> ![img.png](/doc/images/img_11.png)
+> ![img.png](/doc/images/img_16.png)
 
 #### 2. aliyun短信发送服务
 
 这里直接描述怎么用枚举一行代码发送短信
 
 * 配置一个短信模板的枚举，枚举包括短信模板code和短信参数
-> ![img.png](/doc/images/img_12.png)
+> ![img.png](/doc/images/img_15.png)
 
 * 定义一个发送短信的方法即可
 > ![img.png](/doc/images/img_13.png)
