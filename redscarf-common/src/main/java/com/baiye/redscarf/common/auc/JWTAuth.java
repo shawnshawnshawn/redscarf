@@ -40,6 +40,10 @@ public class JWTAuth {
             throw Result.toBizException(ResultCodeEnum.LOGIN_INVALID);
         }
         Claims claims = RSAUtils.verifyJwt(authorization);
+        Long exp = (Long) claims.get("exp");
+        if (exp < System.currentTimeMillis()) {
+            throw Result.toBizException(ResultCodeEnum.LOGIN_INVALID);
+        }
         Object id = claims.get("id");
         AuthID authId = AopUtils.getAuthId(point);
         authId.setId((Long) id);

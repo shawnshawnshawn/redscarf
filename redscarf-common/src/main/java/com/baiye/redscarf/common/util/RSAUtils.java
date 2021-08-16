@@ -36,6 +36,8 @@ public class RSAUtils {
             PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
             JwtBuilder builder = Jwts.builder().setHeaderParam("typ", "JWT").setIssuer("marco").setSubject("token").signWith(signatureAlgorithm, privateKey);
             builder.claim("id", id);
+            // 有效时长30天
+            builder.claim("exp", System.currentTimeMillis() * 30);
             return builder.compact();
         } catch (Exception e) {
             throw Result.toBizException(ResultCodeEnum.SERVER_UNUSERFUL);
