@@ -45,7 +45,7 @@
 * [X] Canal 数据同步
 * [X] 自定义缓存CacheJ
 * [X] 瞬时qps限制RequestLimiter
-* [X] 自定义日志(实时上传elasticsearch)
+* [X] 日志扩展(实时上传elasticsearch)
 * [X] 登录无状态JWT+RSA非对称加密
 * [X] 企业微信群通知
 * [X] 钉钉群通知
