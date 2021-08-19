@@ -1,5 +1,6 @@
 package com.baiye.redscarf.common.properties;
 
+import com.baiye.redscarf.common.properties.pojo.AliyunDingTalk;
 import com.baiye.redscarf.common.properties.pojo.AliyunOss;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -15,4 +16,6 @@ import org.springframework.stereotype.Component;
 public class AliyunProperties {
 
     private AliyunOss aliyunOss;
+
+    private AliyunDingTalk dingTalk;
 }
