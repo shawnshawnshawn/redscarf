@@ -5,6 +5,10 @@ spring:
     name: redscarf-gateway-dev
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
         # 用户服务路由
         - id: redscarf-user-service-dev_1
