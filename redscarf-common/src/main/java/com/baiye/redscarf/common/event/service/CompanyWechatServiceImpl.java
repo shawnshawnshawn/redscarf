@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author baiye
- * @date 2021/4/13 9:56 上午
+ * @since  2021/4/13 9:56 上午
  **/
 @Service
 public class CompanyWechatServiceImpl implements CompanyWechatService {

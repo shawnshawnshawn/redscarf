@@ -1,5 +1,6 @@
 package com.baiye.redscarf.common.enums.service;
 
+import com.baiye.redscarf.common.model.vo.UploadFileVo;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,8 +30,8 @@ public enum OssEnum {
 
     private AliOssService aliOssService;
 
-    public void upload(MultipartFile file, String fileType) {
-        aliOssService.uploadFile(file, fileType);
+    public UploadFileVo upload(MultipartFile file, String fileType) {
+        return aliOssService.uploadFile(file, fileType);
     }
 
     @Component

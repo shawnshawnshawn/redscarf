@@ -2,6 +2,7 @@ package com.baiye.redscarf.common.enums.service;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.model.PutObjectRequest;
+import com.baiye.redscarf.common.elastic.Log;
 import com.baiye.redscarf.common.enums.ResultCodeEnum;
 import com.baiye.redscarf.common.model.vo.UploadFileVo;
 import com.baiye.redscarf.common.properties.AliyunProperties;
@@ -15,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.Base64;
 import java.util.Date;
 
 /**
@@ -50,7 +50,7 @@ public class AliOssService {
             String url = aliyunProperties.getAliyunOss().getCdnFileUrl() + "/" + bucketType + "/" + name;
             vo.setFileUrl(url);
         } catch (Exception e) {
-//            Log.ERROR.print(log, "[阿里云上传图片异常] e -> ", e);
+            Log.ERROR.print(log, "[阿里云上传图片异常] e -> ", e);
             throw Result.toBizException(ResultCodeEnum.ALIYUN_UPLOAD_IMAGE_ERROR);
         }
         return vo;
