@@ -10,6 +10,7 @@ import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -21,7 +22,7 @@ public abstract class RequestLimiterUtils implements BeanPostProcessor {
 
     private static final Logger log = LoggerFactory.getLogger(RequestLimiterUtils.class);
 
-    private static final Map<String, RequestLimiter> requestLimiterMap = new ConcurrentHashMap<>();
+    private static final Map<String, RequestLimiter> requestLimiterMap = new WeakHashMap<>();
 
     public static RequestLimiter getRequestLimiter(String method, int poolSize) {
         synchronized (method.intern()) {
